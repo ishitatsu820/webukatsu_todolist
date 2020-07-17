@@ -1,2 +1,3 @@
-# webukatsu_todolist
-ウェブカツJS上級TODOリスト
+# webukatsu_todolist_jquery
+ウェブカツJS上級TODOリスト jQueryバージョン
+
