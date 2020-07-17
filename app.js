@@ -16,4 +16,26 @@
 // 1. 「TODOを追加」ボタンを押下した際にイベントを発火
 // 2. inputの値を取得（取得したらクリアする）
 // 3. inputの値をlistのitemに追加する（DOM生成）
+$('.js-add-todo').on('click', function(e){
+  e.preventDefault(); //イベントをキャンセル
 
+  var text = $('.js-get-val').val();
+  $('.js-get-val').val('');
+
+  if(!text){
+    $('.js-toggle-error').show();
+    return;
+  }
+
+  $('.js-toggle-error').hide();
+
+  var listItem = '<li class="list__item js-todo_list_item" data-text="' + text + '">' +
+  '<i class="far fa-square icon-check js-click-done" aria-hidden="true"></i>' + 
+  '<span class="js-todo_list-text">' + text + '</span>' +
+  '<input type="text" class="editText js-todo_list-editForm" value="' + text + '">' +
+  '<i class="far fa-trash-alt icon-trash js-click-trash" aria-hidden="true"></i>' + 
+  '</li>';
+
+  $('.js-todo_list').prepend(listItem);
+
+});
